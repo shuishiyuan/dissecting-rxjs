@@ -1,4 +1,4 @@
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs/Observable.js';
 import 'rxjs/add/observable/of';
 
 const source$ = Observable.create((observer) => {
