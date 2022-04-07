@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "node --exp--experimental-specifier-resolution=node srcPath/xxxx"
+  },
   "name": "chapter-02",
   "type": "module",
   "version": "1.0.0",
