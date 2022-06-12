@@ -1,19 +1,19 @@
 import {Observable} from 'rxjs/Observable';
 
-const onSubscribe = observer => {
-  let number = 1;
-  const handle = setInterval(() => {
-    observer.next(number++);
-    if (number > 3) {
-      clearInterval(handle);
+const observable = new Observable(subscriber => {
+    let timer = 0;
+    const intervalId = setInterval(() => {
+       subscriber.next(++timer);
+       if (timer === 3) {
+           clearInterval(intervalId);
+       }
+    }, 5000);
+});
+
+const observer = {
+    next: item => {
+        console.log(item);
     }
-  }, 1000);
-};
-
-const source$ = new Observable(onSubscribe);
-
-const theObserver = {
-  next: item => console.log(item)
 }
-source$.subscribe(theObserver);
 
+observable.subscribe(observer);
