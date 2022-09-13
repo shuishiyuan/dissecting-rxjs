@@ -1,13 +1,13 @@
 $(function() {
-  var startTime;
+  let startTime;
 
   $('#hold-me').mousedown(function() {
     startTime = new Date();
-  })
+  });
 
   $('#hold-me').mouseup(function() {
     if (startTime) {
-      const elapsedMilliseconds = (new Date() - startTime);
+      let elapsedMilliseconds = (new Date() - startTime);
 
       startTime = null;
       $('#hold-time').text(elapsedMilliseconds);
@@ -16,5 +16,5 @@ $(function() {
         $('#rank').text('你超过了' + res.rank + '% 的用户');
       });
     }
-  })
-})
+  });
+});
